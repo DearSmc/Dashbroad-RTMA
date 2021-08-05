@@ -1,26 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+  <div>
+    <dashbroad @onClose=closeDashbroad />
+  </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import { ref } from 'vue'
+// import {store} from './store/store'
+import dashbroad from './components/dashbroad.vue'
 
 export default {
-  name: 'App',
+  name: 'LayoutDefault',
+  // store,
+
   components: {
-    HelloWorld
-  }
+    dashbroad
+  },
+  data() {
+    return {
+      isCloseDashbroad : true
+    }
+  },
+  methods: {
+    closeDashbroad(){
+      this.isCloseDashbroad = !this.isCloseDashbroad
+      }
+  },
+
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
