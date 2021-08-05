@@ -4,4 +4,4 @@ import { Quasar } from 'quasar'
 import quasarUserOptions from './quasar-user-options'
 import store from './store'
 
-createApp(App).use(store).use(store).use(Quasar, quasarUserOptions).mount('#app')
+createApp(App).use(store).use(store).use(store).use(Quasar, quasarUserOptions).mount('#app')

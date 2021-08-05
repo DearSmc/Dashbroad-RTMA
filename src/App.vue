@@ -8,12 +8,12 @@
 
 <script>
 // import { ref } from 'vue'
-// import {store} from './store/store'
+import store from './store/index'
 import dashbroad from './components/dashbroad.vue'
 
 export default {
   name: 'LayoutDefault',
-  // store,
+  store,
 
   components: {
     dashbroad

@@ -9,7 +9,7 @@ export const store = new Vuex.Store({
   },
   mutations:{
     setProvince(state,newData){
-        state.province = newData
+      state.province = newData
     }
   },
   getters:{

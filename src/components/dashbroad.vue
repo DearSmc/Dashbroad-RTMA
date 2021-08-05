@@ -45,9 +45,8 @@ export default {
   name : 'dashbroad',
   data() {
     return {
-      data: ["จ.ปทุมธานี","จ.กรุงเทพมหานคร","จ.ประจวบคีรีขันธ์","จ.นครปฐม","จ.สิงห์บุรี"]
-
-      // $store.getters.province
+      data : $store.getters.province
+      // data: ["จ.ปทุมธานี","จ.กรุงเทพมหานคร","จ.ประจวบคีรีขันธ์","จ.นครปฐม","จ.สิงห์บุรี"]
 
     }
   },
