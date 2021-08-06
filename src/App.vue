@@ -1,7 +1,11 @@
 <template>
+  <!-- <q-form class="q-gutter-y-md column q-ma-lg" style="max-width: 300px">
+    <q-input type="text" class="self-center full-width no-outline" rounded outlined v-model="newProvince"/>
+    <q-btn label="Submit" type="submit" color="primary" @click="onSubmit"/>
+  </q-form> -->
 
-  <div>
-    <dashbroad @onClose=closeDashbroad />
+  <div class="q-ma-lg">
+    <dashbroad/>
   </div>
 
 </template>
@@ -18,16 +22,17 @@ export default {
   components: {
     dashbroad
   },
-  data() {
-    return {
-      isCloseDashbroad : true
-    }
-  },
-  methods: {
-    closeDashbroad(){
-      this.isCloseDashbroad = !this.isCloseDashbroad
-      }
-  },
+  // data() {
+  //   return {
+  //     newProvince : "",
+  //   }
+  // },
+  // methods: {
+  //   onSubmit(){
+  //     this.$store.commit("setProvince",newProvince)
+  //     console.log("wiork")
+  //   }
+  // },
 
 }
 </script>

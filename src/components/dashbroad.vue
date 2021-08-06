@@ -39,16 +39,15 @@
 
 <script>
 import { ref } from 'vue'
+import { mapGetters } from 'vuex'
 
 
 export default {
   name : 'dashbroad',
-  data() {
-    return {
-      data : $store.getters.province
-      // data: ["จ.ปทุมธานี","จ.กรุงเทพมหานคร","จ.ประจวบคีรีขันธ์","จ.นครปฐม","จ.สิงห์บุรี"]
-
-    }
+  computed:{
+    ...mapGetters({
+        data : "province"
+    })
   },
   setup () {
     return {
