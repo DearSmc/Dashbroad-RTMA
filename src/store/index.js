@@ -14,15 +14,15 @@ const store = createStore({
   },
   actions: {
     async fetchData() {
+      const url = 'http://localhost:8000/api/v1/incidents/'
       try {
         const res = await fetch(url)
-        if (!res.ok)
-            if (res.status == "OK") {
-              this.state.province = res.data
-            } else {
-                throw new Error(res.status)
-            }
-        else return res;
+        if (res.status == "OK") {
+          this.state.province = res.data
+        }
+        else {
+          throw new Error(res.status)
+        }
       } catch (err) {
           console.log(err)
       }

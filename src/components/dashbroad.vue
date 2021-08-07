@@ -13,7 +13,7 @@
       class="my-card bg-secondary"
       bordered
       >
-        <q-card-section class="text-white q-pt-xs q-mx-md">
+        <q-card-section class="text-white q-py-xs q-mx-md">
           <div class="text-h4 q-mt-sm q-mb-sm">Top 5 Risk Area</div>
           <div
           class="text-h5 q-mx-md q-my-xs"
