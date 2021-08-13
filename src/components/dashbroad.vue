@@ -44,6 +44,11 @@ import { mapGetters } from 'vuex'
 
 export default {
   name : 'dashbroad',
+  data() {
+    return {
+      interval: 0
+    }
+  },
   computed:{
     ...mapGetters({
         data : "province"
@@ -53,6 +58,13 @@ export default {
     return {
       isClose: ref(false)
     }
+  },
+   created() {
+    window.clearInterval(this.interval);
+    this.$store.dispatch("fetchData");
+    this.interval = window.setInterval(() => {
+      this.$store.dispatch("fetchData");
+    }, 3000);
   },
 }
 

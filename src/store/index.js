@@ -6,22 +6,24 @@ const store = createStore({
   },
   mutations: {
     setProvince(state,newData){
-      state.province = state.province.push(newData)
+      state.province = newData
     }
   },
   getters:{
     province:state => state.province
   },
   actions: {
-    async fetchData() {
-      const url = 'http://localhost:8000/api/v1/incidents/'
+    async fetchData(context) {
+      const url = 'http://178.128.89.207/api/v1/incidents/getFive'
       try {
         const res = await fetch(url)
-        if (res.status == "OK") {
-          this.state.province = res.data
+        const data = await res.json()
+        console.log(data)
+        if (res.ok) {
+          context.commit('setProvince',data.getIncidents)
         }
         else {
-          throw new Error(res.status)
+          throw new Error(res)
         }
       } catch (err) {
           console.log(err)
