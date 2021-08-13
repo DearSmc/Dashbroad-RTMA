@@ -2,15 +2,36 @@ import { createStore } from 'vuex'
 
 const store = createStore({
   state: {
-    province : ["จ.ปทุมธานี","จ.กรุงเทพมหานคร","จ.ประจวบคีรีขันธ์","จ.นครปฐม","จ.AAA"]
+    first : ["จ.AAA"],
+    second : ["จ.BBB"],
+    third : ["จ.CCC"],
+    fourth : ["จ.DDD"],
+    fifth : ["จ.EEE"],
   },
   mutations: {
-    setProvince(state,newData){
-      state.province = newData
-    }
+    setFirst(state,newData){
+      state.first = newData
+    },
+    setSecond(state,newData){
+      state.second = newData
+    },
+    setThird(state,newData){
+      state.third = newData
+    },
+    setFourth(state,newData){
+      state.fourth = newData
+    },
+    setFifth(state,newData){
+      state.fifth = newData
+    },
+
   },
   getters:{
-    province:state => state.province
+    getFirst:state => state.first,
+    getSecond:state => state.second,
+    getThird:state => state.third,
+    getFourth:state => state.fourth,
+    getFifth:state => state.fifth
   },
   actions: {
     async fetchData(context) {
@@ -18,9 +39,15 @@ const store = createStore({
       try {
         const res = await fetch(url)
         const data = await res.json()
-        console.log(data)
+
         if (res.ok) {
-          context.commit('setProvince',data.getIncidents)
+
+          context.commit('setFirst',data.getIncidents.st1)
+          context.commit('setSecond',data.getIncidents.nd2)
+          context.commit('setThird',data.getIncidents.rd3)
+          context.commit('setFourth',data.getIncidents.th4)
+          context.commit('setFifth',data.getIncidents.th5)
+
         }
         else {
           throw new Error(res)
